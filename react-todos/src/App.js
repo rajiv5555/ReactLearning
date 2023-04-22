@@ -32,6 +32,8 @@ function App() {
     setTodos(filtered)
   }
 
+  const [showAddTodoForm, setShowAddTodoForm] = useState(false);
+
   
   return (
       <div className='mt-5 container'>
@@ -41,7 +43,13 @@ function App() {
          </div>
          <div className="card-body">
          <TodoTable todos={todos} deleteTodo={deleteTodo}/>
-         <NewTodoForm addTodo={addTodo}/>
+         <button className='btn btn-primary' onClick={() =>{ setShowAddTodoForm(!showAddTodoForm)}}>
+          {showAddTodoForm ? 'Close New Todo': 'New Todo'}
+          </button>
+         {
+          showAddTodoForm && <NewTodoForm addTodo={addTodo}/>
+         }
+         
          </div>
         </div>
       </div>
