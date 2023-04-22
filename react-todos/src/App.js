@@ -1,13 +1,14 @@
 import React,{useState} from 'react';
 import './App.css';
 import TodoTable from './components/TodoTable';
+import NewTodoForm from './components/NewTodoForm';
 function App() {
 
   const [todos, setTodos] = useState([
     {rowNumber:1, rowDescription:'Feed puppy', rowAssigned:'user one'},
     {rowNumber: 2, rowDescription:'water plants', rowAssigned:'user two'},
     {rowNumber:3, rowDescription:'Make dinner', rowAssigned:'user three'},
-    {rowNumber:3, rowDescription:'charge phone battery', rowAssigned:'user four'}
+    {rowNumber:4, rowDescription:'charge phone battery', rowAssigned:'user four'}
   ])
 
   const addTodo=()=>{
@@ -32,6 +33,7 @@ function App() {
          <div className="card-body">
          <TodoTable todos={todos}/>
          <button className='btn btn-primary' onClick={addTodo}>Add new todo</button>
+         <NewTodoForm/>
          </div>
         </div>
       </div>
