@@ -1,7 +1,8 @@
-function TOdoTable(props){
+import TodoRowItem from "./TodoRowItem";
+function TodoTable(props){
 
     return(
-        <table table table-hover>
+        <table className="table table-hover">
             <thead>
             <tr>
                 <th scope='col'>#</th>
@@ -10,10 +11,12 @@ function TOdoTable(props){
               </tr>
             </thead>
             <tbody>
-              <TodoRowItem rowNumber={todos[0].rowNumber} rowDescription={todos[0].rowDescription} rowAssigned={todos[0].rowAssigned}/>
-              <TodoRowItem rowNumber={todos[1].rowNumber} rowDescription={todos[1].rowDescription} rowAssigned={todos[1].rowAssigned}/>
-              <TodoRowItem rowNumber={todos[2].rowNumber} rowDescription={todos[2].rowDescription} rowAssigned={todos[2].rowAssigned}/>
+              <TodoRowItem rowNumber={props.todos[0].rowNumber} rowDescription={props.todos[0].rowDescription} rowAssigned={props.todos[0].rowAssigned}/>
+              <TodoRowItem rowNumber={props.todos[1].rowNumber} rowDescription={props.todos[1].rowDescription} rowAssigned={props.todos[1].rowAssigned}/>
+              <TodoRowItem rowNumber={props.todos[2].rowNumber} rowDescription={props.todos[2].rowDescription} rowAssigned={props.todos[2].rowAssigned}/>
             </tbody>
         </table>
     )
 }
+
+export default TodoTable;
